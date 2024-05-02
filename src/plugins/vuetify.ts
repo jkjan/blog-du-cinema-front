@@ -1,17 +1,7 @@
-// import this after install `@mdi/font` package
-import '@mdi/font/css/materialdesignicons.css'
+import "@mdi/font/css/materialdesignicons.css";
+import { createVuetify } from "vuetify";
+import "vuetify/styles";
 
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
+const vuetify = createVuetify();
 
-
-export default createVuetify({
-  icons: {
-    defaultSet: 'mdi',
-    aliases,
-    sets: {
-      mdi,
-    },
-  },
-})
+export default vuetify;
