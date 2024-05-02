@@ -3,12 +3,10 @@ import { routes } from "../../plugins/router.ts";
 </script>
 
 <template>
-  <v-app-bar flat>
-    <v-container class="mx-auto d-flex align-center justify-center">
-      <v-app-bar-title @click="$router.push('/')"
-        >BLOG DU CINEMA
-      </v-app-bar-title>
-      <v-spacer></v-spacer>
+  <v-app-bar >
+    <v-container id="header" class="mx-auto my-auto d-flex align-center justify-center">
+      <v-app-bar-title id="blog-title" @click="$router.push('/')"
+        >LE BLOG DU CINÉMA</v-app-bar-title>
       <v-btn v-for="(menu, i) in routes.slice(1)" :key="i" :to="menu.path">
         {{ menu.name }}
       </v-btn>
@@ -16,4 +14,18 @@ import { routes } from "../../plugins/router.ts";
   </v-app-bar>
 </template>
 
-<style scoped></style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&display=swap');
+
+#blog-title {
+  font-family: 'Bodoni Moda', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 600;
+  width: auto;
+}
+
+#header {
+  height: auto;
+}
+</style>
