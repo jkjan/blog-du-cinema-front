@@ -2,7 +2,6 @@
 import MovieInfoSidebar from "./MovieInfoSidebar.vue";
 import { Ref, ref, watch } from "vue";
 import {
-  Menu,
   ComponentData,
   contentForIndexKey,
   indexForCategory,
@@ -11,7 +10,7 @@ import MoviePostReader from "../movie_forum/MoviePostReader.vue";
 import MovieDictionary from "./MovieDictionary.vue";
 import MovieInfoBase from "./MovieInfoBase.vue";
 
-let props = defineProps<{ category: Menu }>();
+let props = defineProps<{ category: string }>();
 
 const componentData: Ref<ComponentData> = ref({
   index: [],
@@ -21,7 +20,7 @@ const componentData: Ref<ComponentData> = ref({
 
 watch(
   () => props.category,
-  (newCategory: Menu) => {
+  (newCategory: string) => {
     componentData.value.index = indexForCategory[newCategory];
     if (componentData.value.index.length >= 1) {
       componentData.value.nowKey = componentData.value.index[0].key;

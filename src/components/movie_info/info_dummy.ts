@@ -1,5 +1,3 @@
-type Menu = "history" | "genre" | "dictionary";
-
 interface Index {
   key: string;
   label: string;
@@ -16,7 +14,7 @@ interface ComponentData {
   nowKey: string;
 }
 
-const indexForCategory: { [m in Menu]: Index[] } = {
+const indexForCategory: { [m: string]: Index[] } = {
   history: [
     { key: "a", label: "History 1" },
     { key: "b", label: "History 2" },
@@ -32,6 +30,7 @@ const indexForCategory: { [m in Menu]: Index[] } = {
     { key: "h", label: "Dict 2" },
     { key: "i", label: "Dict 3" },
   ],
+
 };
 
 const contentForIndexKey: {
@@ -63,4 +62,4 @@ const contentForIndexKey: {
 };
 
 export { indexForCategory, contentForIndexKey };
-export type { ComponentData, Menu, Content };
+export type { ComponentData, Content };
