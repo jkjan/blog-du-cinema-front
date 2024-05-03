@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Content} from "../../types.ts";
+import { Content } from "../../types.ts";
 
 defineProps<{ word: Content }>();
 </script>

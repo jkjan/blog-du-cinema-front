@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MovieWord from "./MovieWord.vue";
-import {Content} from "../../types.ts";
+import { Content } from "../../types.ts";
 
 defineProps<{ words: Content[] }>();
 </script>

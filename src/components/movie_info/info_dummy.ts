@@ -1,4 +1,4 @@
-import {Content, Index} from "../../types.ts";
+import { Content, Index } from "../../types.ts";
 
 const movieInfoCategories = [
   { name: "영화의 역사", category: "history" },

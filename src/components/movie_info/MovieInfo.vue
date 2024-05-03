@@ -9,7 +9,7 @@ import {
 import MovieInfoBase from "./MovieInfoBase.vue";
 import MoviePostReader from "../movie_forum/MoviePostReader.vue";
 import MovieDictionary from "./MovieDictionary.vue";
-import {ComponentData} from "../../types.ts";
+import { ComponentData } from "../../types.ts";
 
 const componentData: Ref<ComponentData> = ref({
   category: "",
