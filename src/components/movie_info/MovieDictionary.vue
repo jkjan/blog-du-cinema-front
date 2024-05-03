@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import MovieInfoBase from "./base/MovieInfoBase.vue";
-import { ref } from "vue";
+import { Content } from "./info_dummy.ts";
+import MovieWord from "./MovieWord.vue";
 
-let changeContentKey = (key: string) => {
-  nowContentKey.value = key;
-};
-
-const contentIndices = ref(["f", "g", "h"]);
-let initialKey: string = contentIndices.value[0];
-let nowContentKey = ref(initialKey);
+defineProps<{ words: Content[] }>();
 </script>
 
 <template>
-  <MovieInfoBase
-    @changeContentKey="(key: string) => changeContentKey(key)"
-    :contentIndices="contentIndices"
-  >
-    <template #section>{{ contentIndices[nowContentKey] }}</template>
-  </MovieInfoBase>
+  <v-text-field hide-details="auto" label="검색할 단어를 입력해주세요." />
+
+  <div v-for="(word, i) in words" :key="i">
+    <MovieWord :word="word" />
+    <v-divider />
+  </div>
 </template>
 
 <style scoped></style>
