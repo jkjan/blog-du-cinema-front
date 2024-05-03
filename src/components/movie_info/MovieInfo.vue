@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MovieInfoSidebar from "./MovieInfoSidebar.vue";
 import { Ref, ref, watch } from "vue";
+
 import {
   contentForIndexKey,
   indexForCategory,
@@ -21,6 +22,13 @@ const componentData: Ref<ComponentData> = ref({
 componentData.value.category = movieInfoCategories[0].category;
 
 watch(
+  () => componentData.value.nowKey,
+  (newKey: string) => {
+    componentData.value.content = contentForIndexKey[newKey] ?? [];
+  },
+);
+
+watch(
   () => componentData.value.category,
   (newCategory: string) => {
     componentData.value.indexes = indexForCategory[newCategory] ?? [];
@@ -28,14 +36,6 @@ watch(
     if (componentData.value.indexes?.length >= 1) {
       componentData.value.nowKey = componentData.value.indexes[0].key;
     }
-  },
-  { immediate: true },
-);
-
-watch(
-  () => componentData.value.nowKey,
-  (newKey: string) => {
-    componentData.value.content = contentForIndexKey[newKey] ?? [];
   },
   { immediate: true },
 );
