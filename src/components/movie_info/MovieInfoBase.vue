@@ -1,20 +1,14 @@
 <script setup lang="ts">
-defineEmits<{ (e: "changeCategory", category: string): void }>();
+import { movieInfoCategories } from "./info_dummy.ts";
 
-const movieInfo = [
-  { name: "영화의 역사", category: "history" },
-  { name: "다양한 장르", category: "genre" },
-  { name: "영화 방법론", category: "methodology" },
-  { name: "관련 사이트", category: "website" },
-  { name: "단어 사전", category: "dictionary" },
-];
+defineEmits<{ (e: "changeCategory", category: string): void }>();
 </script>
 
 <template>
   <v-card>
     <v-tabs align-tabs="title">
       <v-tab
-        v-for="(m, i) in movieInfo"
+        v-for="(m, i) in movieInfoCategories"
         :key="i"
         @click="$emit('changeCategory', m.category)"
       >

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Index } from "./info_dummy.ts";
+import {Index} from "../../types.ts";
 
 defineProps<{ indexes: Index[] }>();
 defineEmits<{ (e: "changeIndexKey", key: string): void }>();
