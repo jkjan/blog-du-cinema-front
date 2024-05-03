@@ -6,11 +6,11 @@ import vuetify from "./plugins/vuetify.ts";
 // Components
 import App from "./App.vue";
 
-import { createMemoryHistory, createRouter } from "vue-router";
+import { createWebHistory, createRouter } from "vue-router";
 import { routes } from "./plugins/router.ts";
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory(),
   routes,
 });
 
