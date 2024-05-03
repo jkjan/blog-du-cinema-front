@@ -1,12 +1,14 @@
 <script setup lang="ts">
-defineProps(["index"]);
-defineEmits(["changeIndexKey"]);
+import { Index } from "./info_dummy.ts";
+
+defineProps<{ indexes: Index[] }>();
+defineEmits<{ (e: "changeIndexKey", key: string): void }>();
 </script>
 <template>
   <v-sheet rounded="lg">
     <v-list rounded="lg">
       <v-list-item
-        v-for="i in index"
+        v-for="i in indexes"
         :key="i.key"
         :title="i.label"
         @click="$emit('changeIndexKey', i.key)"

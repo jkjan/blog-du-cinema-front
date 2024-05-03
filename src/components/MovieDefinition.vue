@@ -4,7 +4,7 @@ import content from "./movie_info/definition_dummy.ts";
 </script>
 
 <template>
-    <MoviePostReader :content="content" />
+  <MoviePostReader :content="content" />
 </template>
 
 <style scoped></style>

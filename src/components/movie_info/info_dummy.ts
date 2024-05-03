@@ -9,7 +9,8 @@ interface Content {
 }
 
 interface ComponentData {
-  index: Index[];
+  category: string;
+  indexes: Index[];
   content: Content[];
   nowKey: string;
 }
@@ -25,25 +26,47 @@ const indexForCategory: { [m: string]: Index[] } = {
     { key: "e", label: "Genre 2" },
     { key: "f", label: "Genre 3" },
   ],
+  methodology: [
+    { key: "m1", label: "Methodology 1" },
+    { key: "m2", label: "Methodology 2" },
+    { key: "m3", label: "Methodology 3" },
+  ],
+  website: [
+    { key: "s1", label: "website 1" },
+    { key: "s2", label: "website 2" },
+    { key: "s3", label: "website 3" },
+  ],
   dictionary: [
     { key: "g", label: "Dict 1" },
     { key: "h", label: "Dict 2" },
     { key: "i", label: "Dict 3" },
   ],
-
 };
 
 const contentForIndexKey: {
   [indexKey: string]: Content[];
 } = {
-  a: [{ description: "Example A1" }],
-  b: [{ description: "Example B1" }],
-  c: [{ description: "Example C1" }],
+  // 역사
+  a: [{ description: "역사 설명 1" }],
+  b: [{ description: "역사 설명 2" }],
+  c: [{ description: "역사 설명 3" }],
 
-  d: [{ description: "Example D1" }],
-  e: [{ description: "Example E1" }],
-  f: [{ description: "Example F1" }],
+  // 장르
+  d: [{ description: "장르 설명 1" }],
+  e: [{ description: "장르 설명 2" }],
+  f: [{ description: "장르 설명 3" }],
 
+  // 방법론
+  m1: [{ description: "방법론 설명 1" }],
+  m2: [{ description: "방법론 설명 2" }],
+  m3: [{ description: "방법론 설명 3" }],
+
+  // 사이트
+  s1: [{ description: "사이트 설명 1" }],
+  s2: [{ description: "사이트 설명 2" }],
+  s3: [{ description: "사이트 설명 3" }],
+
+  // 사전
   g: [
     { vocab: "Word G1", description: "Example G1" },
     { vocab: "Word G2", description: "Example G2" },
@@ -62,4 +85,4 @@ const contentForIndexKey: {
 };
 
 export { indexForCategory, contentForIndexKey };
-export type { ComponentData, Content };
+export type { ComponentData, Content, Index };
