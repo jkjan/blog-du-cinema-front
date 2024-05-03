@@ -1,10 +1,11 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <v-main>
     <v-container>
-      <RouterView />
+      <v-sheet min-height="70vh" rounded="lg">
+        <RouterView />
+      </v-sheet>
     </v-container>
   </v-main>
 </template>

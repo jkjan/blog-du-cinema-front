@@ -1,15 +1,15 @@
 <script setup lang="ts">
-defineProps(["contentIndices"]);
-defineEmits(["changeContentKey"]);
+defineProps(["index"]);
+defineEmits(["changeIndexKey"]);
 </script>
 <template>
   <v-sheet rounded="lg">
     <v-list rounded="lg">
       <v-list-item
-        v-for="(title, key) in contentIndices"
-        :key="key"
-        :title="title"
-        @click="$emit('changeContentKey', key)"
+        v-for="i in index"
+        :key="i.key"
+        :title="i.label"
+        @click="$emit('changeIndexKey', i.key)"
         link
       ></v-list-item>
     </v-list>
