@@ -1,19 +1,12 @@
-interface Index {
-  key: string;
-  label: string;
-}
+import { Content, Index } from "../../types.ts";
 
-interface Content {
-  description: string;
-  vocab?: string;
-}
-
-interface ComponentData {
-  category: string;
-  indexes: Index[];
-  content: Content[];
-  nowKey: string;
-}
+const movieInfoCategories = [
+  { name: "영화의 역사", category: "history" },
+  { name: "다양한 장르", category: "genre" },
+  { name: "영화 방법론", category: "methodology" },
+  { name: "관련 사이트", category: "website" },
+  { name: "단어 사전", category: "dictionary" },
+];
 
 const indexForCategory: { [m: string]: Index[] } = {
   history: [
@@ -84,5 +77,4 @@ const contentForIndexKey: {
   ],
 };
 
-export { indexForCategory, contentForIndexKey };
-export type { ComponentData, Content, Index };
+export { indexForCategory, contentForIndexKey, movieInfoCategories };
